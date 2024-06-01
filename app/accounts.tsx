@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
-import { Link } from 'expo-router'
+import { StyleSheet, Text, View } from 'react-native';
+import AccountList from '@/components/AccountsList';
 
 export default function AccountScreen() {
   return (
     <View style={styles.container}>
-      <Link href='/'>Go to Allocations</Link>
-      <Text>Accounts</Text>
+      <View style={styles.header}>
+        <Text>Name</Text>
+        <Text>CAP</Text>
+        <Text>TAP</Text>
+      </View>
+      <AccountList />
     </View>
   );
 };
@@ -13,8 +17,12 @@ export default function AccountScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    gap: 5,
+    padding: 5
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 10,
   },
 });
